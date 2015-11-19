@@ -1,0 +1,26 @@
+.mainbox {
+	border: 1px solid black;
+	width: 300px;
+	height: 150px;
+}
+.homeguest{
+	border: 1px solid red;
+	width: 100px;
+	height: 65px;
+	float: left;
+}
+.point{
+	border: 1px solid blue;
+	width: 100px;
+	height: 65px;
+}
+.maintime{
+	border: 1px solid purple;
+	width: 100px;
+	height: 130px;
+}
+.penalty{
+	border: 1px solid black;
+	
+}
+.timepenalty{}
