@@ -1,2 +1,2 @@
-# st-henri-dashboard
+# St-Henri Dashboard
 Training Project for St-Henri High School
