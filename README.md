@@ -1,5 +1,5 @@
 # St-Henri Tableau de Bord
-Projet de formation pour la Polyvalent St-Henri
+Training Project for St-Henri High School
 
 ## Installation
 Simply clone the repository
