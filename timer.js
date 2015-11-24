@@ -17,15 +17,14 @@ function startTimer (min, sec) {
 			
 			
 		}
-		sec--;	
+		sec--;
+		console.log(min, sec);	
 	}, 1000);
 
 }
 
-	console.log(sec),1000);
-
+	starTimer(min, sec);
 	//Prochaine fois, remplacer focntion for par setInterval (lien:http://www.xul.fr/ecmascript/settimeout.php/)//
-clearInterval(afficherSec)
 
 };
 
