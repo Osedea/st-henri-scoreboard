@@ -5,22 +5,32 @@
 }
 .homeguest{
 	border: 1px solid red;
-	width: 100px;
-	height: 65px;
-	float: left;
+	width: 98px;
+	height: 128px;
+	display:inline-block;
 }
 .point{
 	border: 1px solid blue;
-	width: 100px;
-	height: 65px;
+	width: 98px;
+	height: 128px;
+	display: inline-block;
 }
 .maintime{
 	border: 1px solid purple;
-	width: 100px;
-	height: 130px;
+	width: 98px;
+	height: 128px;
+	display: inline-block;
 }
 .penalty{
 	border: 1px solid black;
-	
+	width:198px;
+	height:18px;
+	float:left;
 }
-.timepenalty{}
+.timepenalty{
+	border:1px solid green;
+	width:98px;
+	height:18px;
+	float: right;
+}
+
