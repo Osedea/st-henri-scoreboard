@@ -7,30 +7,63 @@
 	border: 1px solid red;
 	width: 98px;
 	height: 128px;
-	display:inline-block;
+	position:absolute;
+	margin-left: 0px;
+	margin-top: 0px;
 }
 .point{
 	border: 1px solid blue;
 	width: 98px;
 	height: 128px;
-	display: inline-block;
+    position:absolute;
+    margin-left: 100px;
+    margin-top: 0px;
 }
 .maintime{
 	border: 1px solid purple;
 	width: 98px;
 	height: 128px;
-	display: inline-block;
+	position:absolute;
+	margin-left:200px;
+	margin-top:0px; 
 }
 .penalty{
 	border: 1px solid black;
 	width:198px;
 	height:18px;
-	float:left;
+	position:absolute;
+	margin-left:0px;
+	margin-top: 130px;
 }
 .timepenalty{
 	border:1px solid green;
 	width:98px;
 	height:18px;
-	float: right;
+	position:absolute;
+	margin-left:200px;
+	margin-top: 130px;
 }
 
+#home {
+	border:1px solid red;
+	width: 98px;
+	height:63px;
+}
+
+#guest {
+	border:1px solid red;
+	width: 98px;
+	height:63px;
+}
+
+#pointhome{
+    border:1px solid blue;
+    width:98px;
+    height:63px; 
+}
+
+#pointguest{
+	border:1px solid blue;
+    width:98px;
+    height:63px;
+}
