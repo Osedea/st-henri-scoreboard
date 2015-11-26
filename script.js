@@ -1,3 +1,5 @@
+var equipeA = null;
+var equipeB = null;
 var pointA = 0; //Pointage pour les equipe
 var pointB = 0;
 var minPeriode = 15;
@@ -40,11 +42,34 @@ function pauseGame() {
 function clearGame() {
 	pointA = 0; //Pointage pour les equipe
 	pointB = 0;
+	
 	minPeriode = 15;
 	secPeriode = 0;
 	periode = 1;
-
+	
+	equipeA = null;
+	equipeB = null;
+	
 	minPenalty = 2;
 	secPenalty = 0;
 	gameTimerId = null;
 }
+
+function ajusterPointage(pointage, ajustement) {
+	if (pointage + ajustement >= 0) {
+		return;
+	}
+	pointage = pointage + ajustement;
+}
+
+function ajusterPeriode(ajustement) {
+	if(ajustement <= 0){
+		return;
+	}
+	periode = ajustement;
+}
+
+function ajusterEquipe(equipe, ajustement) {
+	equipe = ajustement;
+}
+
