@@ -1,6 +1,6 @@
 .mainbox {
 	border: 1px solid black;
-	width: 300px;
+	width: 400px;
 	height: 150px;
 }
 .homeguest{
@@ -19,7 +19,8 @@
     margin-left: 100px;
     margin-top: 0px;
 }
-.maintime{
+
+.periode{
 	border: 1px solid purple;
 	width: 98px;
 	height: 128px;
@@ -29,7 +30,7 @@
 }
 .penalty{
 	border: 1px solid black;
-	width:198px;
+	width:298px;
 	height:18px;
 	position:absolute;
 	margin-left:0px;
@@ -40,8 +41,17 @@
 	width:98px;
 	height:18px;
 	position:absolute;
-	margin-left:200px;
+	margin-left:300px;
 	margin-top: 130px;
+}
+
+.maintime{
+	border:1px solid yellow;
+	width:98px;
+	height:128px;
+	position:absolute;
+	margin-left: 300px;
+	margin-top:0px;
 }
 
 #home {
