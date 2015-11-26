@@ -1,11 +1,12 @@
-
+var pointA = 0; //Pointage pour les equipe
+var pointB = 0;
 var minPeriode = 15;
 var secPeriode = 0;
 var periode = 1;
 
 var minPenalty = 2;
 var secPenalty = 0;
-
+var gameTimerId = null;
 
 function startTimer (min, sec) {
 	var interval = setInterval(function (){
@@ -22,14 +23,28 @@ function startTimer (min, sec) {
 	}, 1000);
 
 	function stopTimer(id) {
-
 		clearInterval(id);
 	}
-};
 
-	startTimer("Game Time:", minPeriode, secPeriode);
-	startTimer("Penalty Time:", minPenalty, secPenalty);
-	//Prochaine fois, remplacer focntion for par setInterval (lien:http://www.xul.fr/ecmascript/settimeout.php/)//
+  	return interval;
+}
 
+function startGame() {
+ 	gameTimerId = startTimer(minPeriode, secPeriode);
+ }
 
- 
+function pauseGame() {
+	clearInterval(gameTimerId);
+}
+
+function clearGame() {
+	pointA = 0; //Pointage pour les equipe
+	pointB = 0;
+	minPeriode = 15;
+	secPeriode = 0;
+	periode = 1;
+
+	minPenalty = 2;
+	secPenalty = 0;
+	gameTimerId = null;
+}
