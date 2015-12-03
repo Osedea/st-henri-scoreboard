@@ -1,79 +1,80 @@
 .mainbox {
+	background-image:url(score-board-02.png);
 	border: 1px solid black;
-	width: 400px;
-	height: 150px;
+	width: 677px;
+	height: 100px;
 }
 .homeguest{
 	border: 1px solid red;
-	width: 98px;
-	height: 128px;
+	width: 318px;
+	height: 98px;
 	position:absolute;
-	margin-left: 0px;
+	margin-left: 18px;
 	margin-top: 0px;
 }
 .point{
 	border: 1px solid blue;
-	width: 98px;
-	height: 128px;
+	width: 40px;
+	height: 98px;
     position:absolute;
-    margin-left: 100px;
+    margin-left: 345px;
     margin-top: 0px;
 }
 
 .periode{
 	border: 1px solid purple;
-	width: 98px;
-	height: 128px;
+	width: 88px;
+	height: 98px;
 	position:absolute;
-	margin-left:200px;
+	margin-left:398px;
 	margin-top:0px; 
 }
 .penalty{
 	border: 1px solid black;
-	width:298px;
+	width:468px;
 	height:18px;
 	position:absolute;
-	margin-left:0px;
-	margin-top: 130px;
+	margin-left:18px;
+	margin-top: 100px;
 }
 .timepenalty{
 	border:1px solid green;
-	width:98px;
+	width:168px;
 	height:18px;
 	position:absolute;
-	margin-left:300px;
-	margin-top: 130px;
+	margin-left:488px;
+	margin-top: 100px;
 }
 
 .maintime{
 	border:1px solid yellow;
-	width:98px;
-	height:128px;
+	width:168px;
+	height:98px;
 	position:absolute;
-	margin-left: 300px;
+	margin-left: 486px;
 	margin-top:0px;
 }
 
 #home {
 	border:1px solid red;
-	width: 98px;
-	height:63px;
+	width: 318px;
+	height:48px;
 }
 
 #guest {
 	border:1px solid red;
-	width: 98px;
-	height:63px;
+	width: 318px;
+	height:48px;
 }
 
 #pointhome{
     border:1px solid blue;
-    width:98px;
-    height:63px; 
+    width:40px;
+    height:48px; 
 }
 
 #pointguest{
 	border:1px solid blue;
-    width:98px;
-    height:63px;
+    width:40px;
+    height:48px;
 }
