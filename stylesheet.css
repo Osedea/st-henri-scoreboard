@@ -1,11 +1,11 @@
 .mainbox {
 	background-image:url(score-board-02.png);
-	border: 1px solid black;
+	border: 0px solid black;
 	width: 677px;
 	height: 100px;
 }
 .homeguest{
-	border: 1px solid red;
+	border: 0px solid red;
 	width: 318px;
 	height: 98px;
 	position:absolute;
@@ -13,7 +13,7 @@
 	margin-top: 0px;
 }
 .point{
-	border: 1px solid blue;
+	border: 0px solid blue;
 	width: 40px;
 	height: 98px;
     position:absolute;
@@ -22,7 +22,7 @@
 }
 
 .periode{
-	border: 1px solid purple;
+	border: 0px solid purple;
 	width: 88px;
 	height: 98px;
 	position:absolute;
@@ -30,7 +30,7 @@
 	margin-top:0px; 
 }
 .penalty{
-	border: 1px solid black;
+	border: 0px solid black;
 	width:468px;
 	height:18px;
 	position:absolute;
@@ -38,7 +38,7 @@
 	margin-top: 100px;
 }
 .timepenalty{
-	border:1px solid green;
+	border:0px solid green;
 	width:168px;
 	height:18px;
 	position:absolute;
@@ -47,7 +47,7 @@
 }
 
 .maintime{
-	border:1px solid yellow;
+	border:0px solid yellow;
 	width:168px;
 	height:98px;
 	position:absolute;
@@ -56,25 +56,25 @@
 }
 
 #home {
-	border:1px solid red;
+	border:0px solid red;
 	width: 318px;
 	height:48px;
 	}
 
 #guest {
-	border:1px solid red;
+	border:0px solid red;
 	width: 318px;
 	height:48px;
 }
 
 #pointhome{
-    border:1px solid blue;
+    border:0px solid blue;
     width:40px;
     height:48px; 
 }
 
 #pointguest{
-	border:1px solid blue;
+	border:0px solid blue;
     width:40px;
     height:48px;
 }
@@ -86,7 +86,6 @@
 }
 .timeText{
 	color: black;
-
 }
 
 .flex{
