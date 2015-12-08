@@ -59,7 +59,7 @@
 	border:1px solid red;
 	width: 318px;
 	height:48px;
-}
+	}
 
 #guest {
 	border:1px solid red;
@@ -80,15 +80,19 @@
 }
 .whiteText{
 	color: white;
-	text-align: center;
 }
 .blackText{
 	color:black;
-	text-align: center;
 }
 .timeText{
 	color: black;
 
+}
+
+.flex{
+	display:flex;
+	justify-content:center;
+	align-items:center;
 }
 
 
