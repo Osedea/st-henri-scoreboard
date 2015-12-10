@@ -140,7 +140,12 @@
 	justify-content:flex-start;
 }
 
+.initial-position {
+	margin-top: 68px;
+	z-index: -1;
+	-webkit-transition: all 0.5s;
+}
 
-
-
-
+.final-position {
+	margin-top: 100px;
+}
