@@ -4,10 +4,9 @@
 }
 
 @font-face{
-    font-family: "teamfont";
+    font-family: "namefont";
     src: url("fonts/graduate-regular.ttf") format("truetype");
 }
-
 
 .mainbox{
 	background-image:url(score-board-02.png);
@@ -41,6 +40,16 @@
 	margin-left:398px;
 	margin-top:0px; 
 }
+
+.maintime{
+	border:0px solid yellow;
+	width:185px;
+	height:98px;
+	position:absolute;
+	margin-left: 486px;
+	margin-top:0px;
+}
+
 .penalty{
 	border: 1px solid black;
 	width:468px;
@@ -50,23 +59,15 @@
 	margin-top: 100px;
 	background-color: red;
 }
+
 .timepenalty{
-	border:1px solid green;
+	border:1px solid black;
 	width:168px;
 	height:30px;
 	position:absolute;
 	margin-left:488px;
 	margin-top: 100px;
 	background-color: red;
-}
-
-.maintime{
-	border:0px solid yellow;
-	width:185px;
-	height:98px;
-	position:absolute;
-	margin-left: 486px;
-	margin-top:0px;
 }
 
 #home{
@@ -95,7 +96,7 @@
 
 .teamText{
 	color: white;
-	font-family: "teamfont";
+	font-family: "namefont";
 	letter-spacing:1px;
 	font-size: 17px;
 }
@@ -114,10 +115,29 @@
 	font-size: 17px;
 }
 
-.flex{
+.penaltyText {
+	color:white;
+	font-family: "namefont";
+	letter-spacing:3px;
+	font-size:15px;
+	padding-left: 20px;
+}
+
+.timepenalty {
+  color:white;
+	font-family: "numberfont";
+	letter-spacing:3px;
+	font-size:15px;
+}
+
+.flex {
 	display:flex;
 	justify-content:center;
 	align-items:center;
+}
+
+.flex.left {
+	justify-content:flex-start;
 }
 
 
