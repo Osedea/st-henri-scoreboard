@@ -1,5 +1,17 @@
-.mainbox {
+@font-face{
+    font-family: "numberfont";
+    src: url("fonts/open-24-display.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "teamfont";
+    src: url("fonts/graduate-regular.ttf") format("truetype");
+}
+
+
+.mainbox{
 	background-image:url(score-board-02.png);
+	background-repeat: no-repeat;
 	border: 0px solid black;
 	width: 677px;
 	height: 100px;
@@ -30,38 +42,40 @@
 	margin-top:0px; 
 }
 .penalty{
-	border: 0px solid black;
+	border: 1px solid black;
 	width:468px;
-	height:18px;
+	height:30px;
 	position:absolute;
 	margin-left:18px;
 	margin-top: 100px;
+	background-color: red;
 }
 .timepenalty{
-	border:0px solid green;
+	border:1px solid green;
 	width:168px;
-	height:18px;
+	height:30px;
 	position:absolute;
 	margin-left:488px;
 	margin-top: 100px;
+	background-color: red;
 }
 
 .maintime{
 	border:0px solid yellow;
-	width:168px;
+	width:185px;
 	height:98px;
 	position:absolute;
 	margin-left: 486px;
 	margin-top:0px;
 }
 
-#home {
+#home{
 	border:0px solid red;
 	width: 318px;
 	height:48px;
 	}
 
-#guest {
+#guest{
 	border:0px solid red;
 	width: 318px;
 	height:48px;
@@ -78,14 +92,26 @@
     width:40px;
     height:48px;
 }
-.whiteText{
+
+.teamText{
 	color: white;
+	font-family: "teamfont";
+	letter-spacing:1px;
+	font-size: 17px;
 }
+
 .blackText{
 	color:black;
+	font-family: "numberfont";
+	letter-spacing: 3px;
+	font-size: 50px;
 }
-.timeText{
-	color: black;
+
+.pointText{
+	color: white;
+	font-family: "numberfont";
+	letter-spacing: 3px;
+	font-size: 17px;
 }
 
 .flex{
