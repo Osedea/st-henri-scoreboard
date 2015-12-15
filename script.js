@@ -17,7 +17,7 @@ var gameTimerId = false;
 var timer1 = {
   "element": $("#timer"),
   "sec": 0,
-  "min": 15,
+  "min": 10,
   "intervalKey": null
 };
 var timer2 = {
@@ -87,7 +87,8 @@ function startTimer(timer) {
       } else {
         timer.sec--;
       }
-    timer.element.html(timer.min + ":" + timer.sec);
+
+    $('#timer').html(timer.min + ":" + timer.sec);
   }, 1000);
   return timer.intervalKey;
 }
@@ -105,11 +106,13 @@ function stopTimer(timer) {
 }
 
 
-function changePeriod() {
+function changePeriod(period) {
   stopTimer(timer1);
   stopPenalties();
     gameTimerId = false;
   resetTimer(timer1);
+
+  $('#period').text(period);
 }
  
 
@@ -119,6 +122,7 @@ function startGame() {
     
     startPenalties();
     gameTimerId = startTimer(timer1);
+    console.log(gameTimerId);
   }
 }
 

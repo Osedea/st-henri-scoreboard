@@ -14,11 +14,11 @@
         <div id="guest" class="flex"> <h2 id="visitor-team"></h2></div>
      </div>
      <div class="point pointText">
-        <div id="pointhome" class="flex"><h2 id="home-score"></h2></div>
-        <div id="pointguest" class="flex"><h2 id="visitor-score"></h2></div>
+        <div id="pointhome" class="flex"><h2 id="home-score">0</h2></div>
+        <div id="pointguest" class="flex"><h2 id="visitor-score">0</h2></div>
      </div>
-      <div class="maintime flex"><h1 class="blackText">15:00</h1></div>
-      <div class="periode flex"><h1 class="blackText">1</h1></div>
+      <div class="maintime flex"><h1 class="blackText" id="timer">15:00</h1></div>
+      <div class="periode flex"><h1 class="blackText" id="period">1</h1></div>
       <div class="penalties">
         <div class="penalty penaltyText flex left initial-position final-position"><h2>Home</h2><div class="timepenalty"><h2>2:00</h2></div></div>
 <!--         <div class="penalty penaltyText flex left initial-position final-position"><h2>Guest</h2><div class="timepenalty"><h2>5:00</h2></div></div> -->
@@ -38,7 +38,6 @@
     				<button onclick="startGame()">start</button>
     				<button onclick="pauseGame()">pause</button>
     				<button onclick="resetTimer(timer1)">reset</button>
-    				<p id="timer"></p>
     			</div>
 
     			<h1>Penalty</h1>
@@ -53,9 +52,10 @@
 
     			
     			<h1>Period</h1>
-    			<button onclick="changePeriod()">1</button>
-    			<button onclick="changePeriod()">2</button>
-    			<button onclick="changePeriod()">3</button>
+    			<button onclick="changePeriod(1)">1</button>
+    			<button onclick="changePeriod(2)">2</button>
+    			<button onclick="changePeriod(3)">3</button>
+    			<button onclick="changePeriod(4)">4</button>
     		</td>
 
     		<td class="dashboard-column">
