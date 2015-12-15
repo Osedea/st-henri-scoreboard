@@ -190,7 +190,7 @@ function calculateScore(point, team) {
     $( "#home-score").text(parseInt(currentScore) + point);
    
     if(point <= 0){
-      return;
+      return 0;
     }
      
   }else {
