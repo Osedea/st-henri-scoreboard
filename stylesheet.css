@@ -149,3 +149,8 @@
 .final-position {
 	margin-top: 100px;
 }
+
+.dashboard-column {
+	width: 50%;
+	vertical-align: top;
+}

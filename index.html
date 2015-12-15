@@ -22,6 +22,95 @@
       <div class="timepenalty flex initial-position"><h2>2:00</h2></div>
       <div class="periode flex"><h1 class="blackText">1</h1></div>
     </div>
+
+    <br><br><br>
+
+    <hr>
+
+    <table>
+    	<tr>
+    		<td class="dashboard-column">
+    			<h1>Timer</h1>
+    			<div>
+    				<button onclick="startGame()">start</button>
+    				<button onclick="pauseGame()">pause</button>
+    				<button onclick="resetTimer(timer1)">reset</button>
+    				<p id="timer"></p>
+    			</div>
+
+    			<h1>Penalty</h1>
+    			<button onclick="addPenalty(1)">1min</button>
+    			<button onclick="addPenalty(2)">2min</button>
+    			<button onclick="addPenalty(5)">5min</button>
+    			<button onclick="addPenalty(10)">10min</button>
+
+    			<div class="penalties"></div>
+
+    			<button onclick="stopPenalties()">Stop penalties</button>
+
+    			
+    			<h1>Period</h1>
+    			<button onclick="changePeriod()">1</button>
+    			<button onclick="changePeriod()">2</button>
+    			<button onclick="changePeriod()">3</button>
+    		</td>
+
+    		<td class="dashboard-column">
+    			<h1>Team</h1>
+    			Home: <input id="home-team-input"></input>
+    			Visitor: <input id="visitor-team-input"></input>  
+
+    			<p id="home-team"></p>
+    			<p id="visitor-team"></p>
+
+    			<button onclick="changeName()">Update name</button>
+
+    			<h1>Sport</h1>
+    			<p>Soccer/Hockey</p>
+    			<table>
+    				<tr>
+    					<td>Home Score</td>
+    					<td>Visitor Score</td>
+    				</tr>
+    				<tr>
+    					<td>
+    						<button onclick="calculateScore(-1, 'home')">-1</button>
+    						<button onclick="calculateScore(+1, 'home')">+1</button>
+    					</td>
+    					<td>
+    						<button onclick="calculateScore(-1, 'visistor')">-1</button>
+    						<button onclick="calculateScore(+1, 'visitor')">+1</button>
+    					</td>
+    				</tr>
+    			</table>
+
+    			<p>Basket</p>
+    			<table>
+    				<tr>
+    					<td>Home Score</td>
+    					<td>Visitor Score</td>
+    				</tr>
+    				<tr>
+    					<td>
+    						<button onclick="calculateScore(-2, 'home')">-2</button>
+    						<button onclick="calculateScore(+2, 'home')">+2</button>
+    						<button onclick="calculateScore(-3, 'home')">-3</button>
+    						<button onclick="calculateScore(+3, 'home')">+3</button>
+    					</td>
+    					<td>
+    						<button onclick="calculateScore(-2, 'visistor')">-2</button>
+    						<button onclick="calculateScore(+2, 'visitor')">+2</button>
+    						<button onclick="calculateScore(-3, 'visistor')">-3</button>
+    						<button onclick="calculateScore(+3, 'visitor')">+3</button>
+
+    					</td>
+    				</tr>
+    			</table>
+    			<p id="home-score">0</p>
+    			<p id="visitor-score">0</p>
+    		</td>
+    	</tr>
+    </table>
     
 </body>
 </html>
