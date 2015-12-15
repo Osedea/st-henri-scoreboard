@@ -10,12 +10,12 @@
 
     <div  class="mainbox">
      <div class="homeguest teamText">
-        <div id="home" class="flex"> <h2>home</h2> </div>
-        <div id="guest" class="flex"> <h2>guest</h2></div>
+        <div id="home" class="flex"> <h2 id="home-team"></h2> </div>
+        <div id="guest" class="flex"> <h2 id="visitor-team"></h2></div>
      </div>
      <div class="point pointText">
-        <div id="pointhome" class="flex"><h2>125</h2></div>
-        <div id="pointguest" class="flex"><h2>5</h2></div>
+        <div id="pointhome" class="flex"><h2 id="home-score"></h2></div>
+        <div id="pointguest" class="flex"><h2 id="visitor-score"></h2></div>
      </div>
       <div class="maintime flex"><h1 class="blackText">15:00</h1></div>
       <div class="periode flex"><h1 class="blackText">1</h1></div>
@@ -63,8 +63,6 @@
     			Home: <input id="home-team-input"></input>
     			Visitor: <input id="visitor-team-input"></input>  
 
-    			<p id="home-team"></p>
-    			<p id="visitor-team"></p>
 
     			<button onclick="changeName()">Update name</button>
 
@@ -109,11 +107,6 @@
     					</td>
     				</tr>
     			</table>
-    			<p id="home-score">0</p>
-    			<p id="visitor-score">0</p>
-    		</td>
-    	</tr>
-    </table>
     
 </body>
 </html>
