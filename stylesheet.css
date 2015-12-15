@@ -50,24 +50,33 @@
 	margin-top:0px;
 }
 
+.penalties {
+	position: relative;
+	top: 100px;
+}
+
 .penalty{
 	border: 1px solid black;
-	width:468px;
+	width: 620px;
 	height:30px;
-	position:absolute;
 	margin-left:18px;
-	margin-top: 100px;
+	
 	background-color: red;
+	overflow: hidden;
 }
 
 .timepenalty{
-	border:1px solid black;
-	width:168px;
-	height:30px;
+	border-left: 1px solid black;
+	width:170px;
+	height:32px;
 	position:absolute;
-	margin-left:488px;
-	margin-top: 100px;
 	background-color: red;
+	color:white;
+	font-family: "numberfont";
+	letter-spacing:3px;
+	font-size:15px;
+	right: 0;
+
 }
 
 #home{
@@ -123,11 +132,10 @@
 	padding-left: 20px;
 }
 
-.timepenalty {
-  color:white;
-	font-family: "numberfont";
-	letter-spacing:3px;
-	font-size:15px;
+.timepenalty h2 {
+	margin: 0;
+	text-align: center;
+	line-height: 28px;
 }
 
 .flex {
@@ -141,11 +149,12 @@
 }
 
 .initial-position {
-	margin-top: 68px;
+	position: relative;
+	height: 0px;
 	z-index: -1;
-	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
 }
 
 .final-position {
-	margin-top: 100px;
+	height: 32px;
 }
