@@ -17,7 +17,7 @@ var gameTimerId = false;
 var timer1 = {
   "element": $("#timer"),
   "sec": 0,
-  "min": 10,
+  "min": 15,
   "intervalKey": null
 };
 var timer2 = {
@@ -35,7 +35,7 @@ function stopPenalties(){
 
 function startPenalties(){
   for(var penaltyIndex in penalties) {
-    startTimer(penalties[penaltyIndex]);
+    startTimer(penalties[penaltyIndex], '#unId');
   }
 }
 
@@ -69,12 +69,12 @@ function addPenalty(min) {
      resetTimer(penalty);
      }
   
-  startTimer(penalty);
+  startTimer(penalty, '#unId');
   
   penalties.push(penalty);
 }
 
-function startTimer(timer) {
+function startTimer(timer, idHtml) {
   console.log("start timer");
   timer.intervalKey = setInterval(function () {
       if (timer.sec === 0) {
@@ -88,7 +88,7 @@ function startTimer(timer) {
         timer.sec--;
       }
 
-    $('#timer').html(timer.min + ":" + timer.sec);
+    $(idHtml).html(timer.min + ":" + timer.sec);
   }, 1000);
   return timer.intervalKey;
 }
@@ -121,7 +121,7 @@ function startGame() {
   console.log("start game");
     
     startPenalties();
-    gameTimerId = startTimer(timer1);
+    gameTimerId = startTimer(timer1, '#timerPeriod');
     console.log(gameTimerId);
   }
 }
