@@ -1,3 +1,7 @@
+body {
+	font-family: Arial;
+}
+
 @font-face{
     font-family: "numberfont";
     src: url("fonts/open-24-display.ttf") format("truetype");
@@ -6,6 +10,11 @@
 @font-face{
     font-family: "namefont";
     src: url("fonts/graduate-regular.ttf") format("truetype");
+}
+
+.scoreboard {
+	background-color: green;
+	padding: 20px;
 }
 
 .mainbox{
@@ -38,7 +47,7 @@
 	height: 98px;
 	position:absolute;
 	margin-left:398px;
-	margin-top:0px; 
+	margin-top:0px;
 }
 
 .maintime{
@@ -60,7 +69,7 @@
 	width: 620px;
 	height:30px;
 	margin-left:18px;
-	
+
 	background-color: red;
 	overflow: hidden;
 }
@@ -94,7 +103,7 @@
 #pointhome{
     border:0px solid blue;
     width:40px;
-    height:48px; 
+    height:48px;
 }
 
 #pointguest{
@@ -163,4 +172,18 @@
 .dashboard-column {
 	width: 50%;
 	vertical-align: top;
+}
+
+.score-table-title,
+.penalty-table-title {
+	margin-bottom: 5px;
+}
+
+.score-table td,
+.penalty-table td {
+	border: 1px solid black;
+}
+
+.input-time {
+	width: 60px;
 }

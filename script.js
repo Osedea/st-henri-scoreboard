@@ -12,6 +12,8 @@ var periode = 0;
 
 var gameTimerId = false;
 
+var penaltyNumber = 1;
+
 
 
 var timer1 = {
@@ -35,9 +37,26 @@ function stopPenalties(){
 
 function startPenalties(){
   for(var penaltyIndex in penalties) {
+    startTimer(penalties[penaltyIndex]);
+  }
+}
+
+function startPenalties(){
+  for(var penaltyIndex in penalties) {
     startTimer(penalties[penaltyIndex], '#unId');
   }
 }
+
+function removePenalty(penaltyIndex){
+  console.log('in in ');
+  penalty = penalties[penaltyIndex];
+
+  stopTimer(penalty);
+  $('#penalty-index-' + penaltyIndex).remove();
+  penalty = undefined;
+
+}
+
 
 function checkIfPenaltiesOver() {
   var penalty = null;
@@ -45,7 +64,7 @@ function checkIfPenaltiesOver() {
     penalty = penalties[penaltyIndex];
     if(penalty.min === 0 && penalty.sec === 0) {
       stopTimer(penalty);
-      penalty.element.remove();
+      $('#penalty-index-' + penaltyIndex).remove();
       penalty = undefined;
     }
   }
@@ -55,30 +74,66 @@ setInterval(function(){
   checkIfPenaltiesOver();
 }, 1000);
 
-function addPenalty(min) {
+function addPenalty(team) {
+
+  var min = 2;
+  var teamName = '';
+
+  if (team == 'home') {
+    if ($('#home-penalty-minutes').val()) {
+      console.log($('#home-penalty-minutes').val());
+      min = $('#home-penalty-minutes').val();
+    }
+    else {
+      return;
+    }
+
+    teamName = $("#home-team-input").val() ? $("#home-team-input").val() : "Home";
+  }
+  else if (team == 'visitor') {
+    if ($('#visitor-penalty-minutes').val()) {
+      console.log($('#visitor-penalty-minutes').val());
+      min = $('#visitor-penalty-minutes').val();
+    }
+    else {
+      return;
+    }
+
+    teamName = $("#visitor-team-input").val() ? $("#visitor-team-input").val() : "Visitor";
+  }
+
 
   var penalty = {
-    "element": $("<div></div>"),
+    //"element": "<div><table><tr><td><p id='penalty-" + penalties.length + "'></p></td><td><button id='penalty-button-" + penalties.length  + "' onClick='removePenalty(" + penalties.length + ")'>X</button></td></tr></table></div>",
+
+    "element" : '<div id="penalty-index-' + penalties.length + '" class="penalty penaltyText flex left "><h2>' + teamName + '</h2><div class="timepenalty" onClick="removePenalty(' + penalties.length + ')"><h2 id="penalty-' + penalties.length + '"></h2></div></div>',
     "sec": 0,
     "min": min,
     "intervalKey": null
   };
-  
-  $(".penalties").append(penalty.element);
+
+  if (team == 'home') {
+    $(".penalties").append(penalty.element);
+  }
+  else if (team == 'visitor') {
+    $(".penalties").append(penalty.element);
+  }
+
   if(typeof min === "undefined"){
      resetTimer(penalty);
      }
-  
-  startTimer(penalty, '#unId');
-  
+
+
+  startTimer(penalty, '#penalty-' + penalties.length);
+
   penalties.push(penalty);
 }
 
 function startTimer(timer, idHtml) {
   console.log("start timer");
   timer.intervalKey = setInterval(function () {
-      if (timer.sec === 0) {
-        if (timer.min === 0) {
+      if (timer.sec == 0) {
+        if (timer.min == 0) {
           stopTimer(timer);
         } else {
           timer.sec = 59;
@@ -95,10 +150,20 @@ function startTimer(timer, idHtml) {
 
 function resetTimer(timer) {
   timer.min = 15;
-  timer.sec = 0;
+  timer.sec = 00;
+
+  if ($('#period-minutes').val()) {
+    timer.min = $('#period-minutes').val();
+  }
+  if ($('#period-seconds').val()) {
+    timer.sec = $('#period-seconds').val();
+  }
+
   stopTimer(timer);
   gameTimerId = false;
-  timer.element.html(timer.min + ":" + timer.sec);
+
+
+  $('#timerPeriod').html(timer.min + ":" + timer.sec);
 };
 
 function stopTimer(timer) {
@@ -114,12 +179,12 @@ function changePeriod(period) {
 
   $('#period').text(period);
 }
- 
+
 
 function startGame() {
   if(! gameTimerId){
   console.log("start game");
-    
+
     startPenalties();
     gameTimerId = startTimer(timer1, '#timerPeriod');
     console.log(gameTimerId);
@@ -137,12 +202,12 @@ function clearGame() {
   console.log("Clear game");
   pointA = 0; //Pointage pour les equipe
   pointB = 0;
-  
+
   stopTimer(gameTimerId);
-  
+
   var node = $("#timer");
-    node.html("Compteur a zero")
-  
+    node.html("Compteur a zero");
+
   minPeriode = 15;
   secPeriode = 0;
   periode = 1;
@@ -184,23 +249,23 @@ function ajouterPenalty(minute, seconde, equipe) {
 }
 
 function changeName() {
-  $( "#home-team" ).text( $("#home-team-input").val() );
-  $( "#visitor-team" ).text( $("#visitor-team-input").val() );
+  $( ".home-team" ).text( $("#home-team-input").val() );
+  $( ".visitor-team" ).text( $("#visitor-team-input").val() );
 }
 
 function calculateScore(point, team) {
   if (team === "home") {
     var currentScore = $( "#home-score").text()
     $( "#home-score").text(parseInt(currentScore) + point);
-   
+
     if(point <= 0){
       return 0;
     }
-     
+
   }else {
     var currentScore = $( "#visitor-score").text()
     $( "#visitor-score").text(parseInt(currentScore) + point);
-  
+
   }
-  
-}  
+
+}

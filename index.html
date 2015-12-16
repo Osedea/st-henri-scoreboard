@@ -8,22 +8,46 @@
 </head>
 <body>
 
-    <div  class="mainbox">
-     <div class="homeguest teamText">
-        <div id="home" class="flex"> <h2 id="home-team"></h2> </div>
-        <div id="guest" class="flex"> <h2 id="visitor-team"></h2></div>
-     </div>
-     <div class="point pointText">
-        <div id="pointhome" class="flex"><h2 id="home-score">0</h2></div>
-        <div id="pointguest" class="flex"><h2 id="visitor-score">0</h2></div>
-     </div>
-      <div class="maintime flex"><h1 class="blackText" id="timerPeriod">15:00</h1></div>
-      <div class="periode flex"><h1 class="blackText" id="period">1</h1></div>
-      <div class="penalties">
-        <div class="penalty penaltyText flex left initial-position final-position"><h2>Home</h2><div class="timepenalty"><h2 id=>2:00</h2></div></div>
-<!--         <div class="penalty penaltyText flex left initial-position final-position"><h2>Guest</h2><div class="timepenalty"><h2>5:00</h2></div></div> -->
-        
-      </div>
+    <div class="scoreboard">
+        <div class="mainbox">
+            <div class="homeguest teamText">
+                <div id="home" class="flex">
+                    <h2 class="home-team"></h2>
+                </div>
+                <div id="guest" class="flex">
+                    <h2 class="visitor-team"></h2>
+                </div>
+            </div>
+            <div class="point pointText">
+                <div id="pointhome" class="flex">
+                    <h2 id="home-score">0</h2>
+                </div>
+                <div id="pointguest" class="flex">
+                    <h2 id="visitor-score">0</h2>
+                </div>
+            </div>
+            <div class="maintime flex">
+                <h1 class="blackText" id="timerPeriod">15:00</h1>
+            </div>
+            <div class="periode flex">
+                <h1 class="blackText" id="period">1</h1>
+            </div>
+            <div class="penalties">
+    <!--             <div class="penalty penaltyText flex left initial-position final-position">
+                    <h2>Home</h2>
+                    <div class="timepenalty">
+                        <h2>2:00</h2>
+                    </div>
+                </div> -->
+    <!--             <div class="penalty penaltyText flex left initial-position final-position">
+                    <h2>Guest</h2>
+                    <div class="timepenalty">
+                        <h2>5:00</h2>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
     </div>
 
     <br><br><br>
@@ -35,28 +59,40 @@
     		<td class="dashboard-column">
     			<h1>Timer</h1>
     			<div>
+                    Minutes: <input id="period-minutes" class="input-time" value="15" type="number"></input>
+                    Seconds: <input id="period-seconds" class="input-time" value="00" type="number"></input>
+                    <br>
+                    <br>
     				<button onclick="startGame()">start</button>
     				<button onclick="pauseGame()">pause</button>
     				<button onclick="resetTimer(timer1)">reset</button>
     			</div>
 
     			<h1>Penalty</h1>
-    			<p>Home</p>
-    			<button onclick="addPenalty(1)">1min</button>
-    			<button onclick="addPenalty(2)">2min</button>
-    			<button onclick="addPenalty(5)">5min</button>
-    			<button onclick="addPenalty(10)">10min</button>
+    			<p class="penalty-table-title">Home</p>
+                <table class="penalty-table">
+                    <tr>
+                        <td>Time Min: <input id="home-penalty-minutes" class="input-time" value="2" type="number"></input></td>
+                        <!-- <td>Time Sec: <input id="penalty-seconds" class="input-time" value="00" type="number"></input></td> -->
+                        <td><button onclick="addPenalty('home')">Add</button></td>
+                    </tr>
+                </table>
+                <div class="home-penalties"></div>
 
-    			<button onclick="addPenalty(1)">1min</button>
-    			<button onclick="addPenalty(2)">2min</button>
-    			<button onclick="addPenalty(5)">5min</button>
-    			<button onclick="addPenalty(10)">10min</button>
+                <p class="penalty-table-title">Visitor</p>
+                <table class="penalty-table">
+                    <tr>
+                        <td>Time Min: <input id="visitor-penalty-minutes" class="input-time" value="2" type="number"></input></td>
+                        <!-- <td>Time Sec: <input id="penalty-seconds" class="input-time" value="00" type="number"></input></td> -->
+                        <td><button onclick="addPenalty('visitor')">Add</button></td>
+                    </tr>
+                </table>
+    			<div class="visitor-penalties"></div>
 
-    			<div class="penalties"></div>
-
+                <br>
     			<button onclick="stopPenalties()">Stop penalties</button>
 
-    			
+
     			<h1>Period</h1>
     			<button onclick="changePeriod(1)">1</button>
     			<button onclick="changePeriod(2)">2</button>
@@ -67,17 +103,17 @@
     		<td class="dashboard-column">
     			<h1>Team</h1>
     			Home: <input id="home-team-input"></input>
-    			Visitor: <input id="visitor-team-input"></input>  
+    			Visitor: <input id="visitor-team-input"></input>
 
 
     			<button onclick="changeName()">Update name</button>
 
-    			<h1>Sport</h1>
-    			<p>Soccer/Hockey</p>
-    			<table>
+    			<h1>Scores</h1>
+    			<p class="score-table-title">Soccer/Hockey </p>
+    			<table class="score-table">
     				<tr>
-    					<td>Home Score</td>
-    					<td>Visitor Score</td>
+    					<td class="home-team">Home Score</td>
+    					<td class="visitor-team">Visitor Score</td>
     				</tr>
     				<tr>
     					<td>
@@ -91,11 +127,11 @@
     				</tr>
     			</table>
 
-    			<p>Basket</p>
-    			<table>
+    			<p class="score-table-title">Basket</p>
+    			<table class="score-table">
     				<tr>
-    					<td>Home Score</td>
-    					<td>Visitor Score</td>
+                        <td class="home-team">Home Score</td>
+                        <td class="visitor-team">Visitor Score</td>
     				</tr>
     				<tr>
     					<td>
@@ -113,6 +149,8 @@
     					</td>
     				</tr>
     			</table>
-    
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
