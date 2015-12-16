@@ -35,15 +35,15 @@ function stopPenalties(){
   }
 }
 
-function startPenalties(){
-  for(var penaltyIndex in penalties) {
-    startTimer(penalties[penaltyIndex]);
-  }
-}
+// function startPenalties(){
+//   for(var penaltyIndex in penalties) {
+//     startTimer(penalties[penaltyIndex]);
+//   }
+// }
 
 function startPenalties(){
   for(var penaltyIndex in penalties) {
-    startTimer(penalties[penaltyIndex], '#unId');
+    startTimer(penalties[penaltyIndex], "#penalty-" + penalties[penaltyIndex].element.attr("data-index"));
   }
 }
 
@@ -104,9 +104,7 @@ function addPenalty(team) {
 
 
   var penalty = {
-    //"element": "<div><table><tr><td><p id='penalty-" + penalties.length + "'></p></td><td><button id='penalty-button-" + penalties.length  + "' onClick='removePenalty(" + penalties.length + ")'>X</button></td></tr></table></div>",
-
-    "element" : '<div id="penalty-index-' + penalties.length + '" class="penalty penaltyText flex left "><h2>' + teamName + '</h2><div class="timepenalty" onClick="removePenalty(' + penalties.length + ')"><h2 id="penalty-' + penalties.length + '"></h2></div></div>',
+    "element" : $('<div data-index="'+penalties.length+'" id="penalty-index-' + penalties.length + '" class="penalty penaltyText flex left "><h2>' + teamName + '</h2><div class="timepenalty" onClick="removePenalty(' + penalties.length + ')"><h2 id="penalty-' + penalties.length + '"></h2></div></div>'),
     "sec": 0,
     "min": min,
     "intervalKey": null
@@ -120,17 +118,20 @@ function addPenalty(team) {
   }
 
   if(typeof min === "undefined"){
-     resetTimer(penalty);
-     }
+    resetTimer(penalty);
+  }
 
 
-  startTimer(penalty, '#penalty-' + penalties.length);
+  // startTimer(penalty, '#penalty-' + penalties.length);
+  $("#penalty-"+penalties.length).html(formatTime(penalty.min, 0));
 
   penalties.push(penalty);
 }
 
 function startTimer(timer, idHtml) {
   console.log("start timer");
+
+  var secString = "";
   timer.intervalKey = setInterval(function () {
       if (timer.sec == 0) {
         if (timer.min == 0) {
@@ -143,27 +144,29 @@ function startTimer(timer, idHtml) {
         timer.sec--;
       }
 
-    $(idHtml).html(timer.min + ":" + timer.sec);
+
+    
+    $(idHtml).html(formatTime(timer.min, timer.sec));
   }, 1000);
   return timer.intervalKey;
 }
 
 function resetTimer(timer) {
   timer.min = 15;
-  timer.sec = 00;
+  timer.sec = 0;
 
   if ($('#period-minutes').val()) {
-    timer.min = $('#period-minutes').val();
+    timer.min = parseInt($('#period-minutes').val());
   }
   if ($('#period-seconds').val()) {
-    timer.sec = $('#period-seconds').val();
+    timer.sec = parseInt($('#period-seconds').val());
   }
 
   stopTimer(timer);
   gameTimerId = false;
 
 
-  $('#timerPeriod').html(timer.min + ":" + timer.sec);
+  $('#timerPeriod').html(formatTime(timer.min, timer.sec));
 };
 
 function stopTimer(timer) {
@@ -183,7 +186,7 @@ function changePeriod(period) {
 
 function startGame() {
   if(! gameTimerId){
-  console.log("start game");
+    console.log("start game");
 
     startPenalties();
     gameTimerId = startTimer(timer1, '#timerPeriod');
@@ -244,8 +247,21 @@ function ajouterPenalty(minute, seconde, equipe) {
     seconde: seconde,
     equipe: equipe
   };
-  startTimer(penalty.minute, penalty.seconde);
+
   penalties.push(penalty);
+
+}
+
+function formatTime(min, sec) {
+  var minString = String(min),
+      secString = "";
+  if(sec <= 9) {
+      secString = "0" + sec;
+    } else {
+      secString = sec;
+    }
+
+  return minString + ":" + secString;
 }
 
 function changeName() {

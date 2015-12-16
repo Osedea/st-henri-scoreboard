@@ -22,7 +22,7 @@ body {
 	background-repeat: no-repeat;
 	border: 0px solid black;
 	width: 677px;
-	height: 100px;
+	height: 250px;
 }
 .homeguest{
 	border: 0px solid red;
@@ -77,14 +77,14 @@ body {
 .timepenalty{
 	border-left: 1px solid black;
 	width:170px;
-	height:32px;
+	height:30px;
 	position:absolute;
 	background-color: red;
 	color:white;
 	font-family: "numberfont";
 	letter-spacing:3px;
 	font-size:15px;
-	right: 0;
+	right: 18px;
 
 }
 
@@ -155,6 +155,10 @@ body {
 
 .flex.left {
 	justify-content:flex-start;
+}
+
+.reset-button {
+	margin-left: 5px;
 }
 
 .initial-position {

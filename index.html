@@ -33,19 +33,6 @@
                 <h1 class="blackText" id="period">1</h1>
             </div>
             <div class="penalties">
-    <!--             <div class="penalty penaltyText flex left initial-position final-position">
-                    <h2>Home</h2>
-                    <div class="timepenalty">
-                        <h2>2:00</h2>
-                    </div>
-                </div> -->
-    <!--             <div class="penalty penaltyText flex left initial-position final-position">
-                    <h2>Guest</h2>
-                    <div class="timepenalty">
-                        <h2>5:00</h2>
-                    </div>
-                </div> -->
-
             </div>
         </div>
     </div>
@@ -60,12 +47,11 @@
     			<h1>Timer</h1>
     			<div>
                     Minutes: <input id="period-minutes" class="input-time" value="15" type="number"></input>
-                    Seconds: <input id="period-seconds" class="input-time" value="00" type="number"></input>
+                    Seconds: <input id="period-seconds" class="input-time" value="00" type="number"></input><button onclick="resetTimer(timer1)" class="reset-button">reset</button>
                     <br>
                     <br>
     				<button onclick="startGame()">start</button>
     				<button onclick="pauseGame()">pause</button>
-    				<button onclick="resetTimer(timer1)">reset</button>
     			</div>
 
     			<h1>Penalty</h1>
@@ -73,7 +59,6 @@
                 <table class="penalty-table">
                     <tr>
                         <td>Time Min: <input id="home-penalty-minutes" class="input-time" value="2" type="number"></input></td>
-                        <!-- <td>Time Sec: <input id="penalty-seconds" class="input-time" value="00" type="number"></input></td> -->
                         <td><button onclick="addPenalty('home')">Add</button></td>
                     </tr>
                 </table>
@@ -83,7 +68,6 @@
                 <table class="penalty-table">
                     <tr>
                         <td>Time Min: <input id="visitor-penalty-minutes" class="input-time" value="2" type="number"></input></td>
-                        <!-- <td>Time Sec: <input id="penalty-seconds" class="input-time" value="00" type="number"></input></td> -->
                         <td><button onclick="addPenalty('visitor')">Add</button></td>
                     </tr>
                 </table>
